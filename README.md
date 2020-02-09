@@ -8,10 +8,10 @@ migration-planning-guide: Migration-planning-guide
 Ansible galaxy:
 ---------------
 
-[https://galaxy.ansible.com/devops-toolbox.migration-planning-guide](https://galaxy.ansible.com/devops-toolbox.migration-planning-guide)
+[https://galaxy.ansible.com/devopstoolbox.migration-planning-guide](https://galaxy.ansible.com/devopstoolbox.migration-planning-guide)
 
 ```bash
-ansible-galaxy install devops-toolbox.migration-planning-guide
+ansible-galaxy install devopstoolbox.migration-planning-guide
 ```
 
 Requirements
@@ -60,7 +60,7 @@ Example Playbook
   tasks:
     - name: migration-planning-guide is configured
       import_role:
-        name: devops-toolbox.migration-planning-guide
+        name: devopstoolbox.migration-planning-guide
       vars:
         migration-planning-guide_packages_state: present
         migration-planning-guide_remove_packages: true
@@ -89,4 +89,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/devops-toolbox.)
+- [Mihai Criveti](https://www.linkedin.com/in/devopstoolbox.)
