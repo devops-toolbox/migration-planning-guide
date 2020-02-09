@@ -1,0 +1,27 @@
+---
+# Install migration-planning-guide packages
+
+- name: unwanted packages are removed
+  package:
+    name: "{{ migration-planning-guide_packages_remove }}"
+    state: absent
+  become: true
+  when: migration-planning-guide_remove_packages
+
+- name: prereq repositories are installed
+  package:
+    name: "{{ migration-planning-guide_packages_repos }}"
+    state: "{{ migration-planning-guide_packages_state }}"
+  become: true
+
+- name: prereq packages are installed
+  package:
+    name: "{{ migration-planning-guide_packages_prereq }}"
+    state: "{{ migration-planning-guide_packages_state }}"
+  become: true
+
+- name: packages are installed
+  package:
+    name: "{{ migration-planning-guide_packages_install }}"
+    state: "{{ migration-planning-guide_packages_state }}"
+  become: true

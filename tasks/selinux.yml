@@ -1,0 +1,13 @@
+---
+# Template configuration files for migration-planning-guide
+
+- name: Set SELinux booleans
+  seboolean:
+    name: "{{ item.name }}"
+    state: "{{ item.state }}"
+    persistent: "{{ item.persistent | default('false') }}"
+  loop: "{{ migration-planning-guide_selinux_booleans }}"
+  when:
+    - ansible_selinux.status == "enabled"
+    - migration-planning-guide_enable_selinux
+  become: true

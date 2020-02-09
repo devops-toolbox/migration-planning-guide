@@ -1,0 +1,10 @@
+---
+# Template configuration files for migration-planning-guide
+
+- name: template is copied
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  become: true
+  loop: "{{ migration-planning-guide_templates_copy }}"
+  when: migration-planning-guide_copy_templates
